@@ -1,0 +1,52 @@
+{
+  "go-func": {
+    "prefix": "go-func",
+    "body": [
+      "type ${TM_FILENAME_BASE/(\\w+)?[-_\\s]+(\\w+)/${1:/upcase}_${2:/upcase}/g}_RQB struct{",
+      "\t",
+      "}",
+      "",
+      "type ${TM_FILENAME_BASE/(\\w+)?[-_\\s]+(\\w+)/${1:/upcase}_${2:/upcase}/g}_RSB struct{",
+      "\t",
+      "}",
+      "",
+      "func ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}(${1:c *gin.Context}) (any, error) {",
+      "",
+      "\tvar dto ${TM_FILENAME_BASE/(\\w+)?[-_\\s]+(\\w+)/${1:/upcase}_${2:/upcase}/g}_RQB",
+      "\tif ex := c.ShouldBindJSON(&dto); ex != nil {",
+      "\t\treturn nil, ex",
+      "\t}",
+      "",
+      "\treturn nil, nil",
+      "",
+      "}"
+    ]
+  },
+
+  "go-entity": {
+    "prefix": "go-entity",
+    "body": [
+      "func (${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}) TableName() string {",
+      "\treturn `${TM_FILENAME_BASE}`",
+      "}",
+      "",
+      "type ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} struct {",
+      "\tdbx.BaseTable",
+      "\t${1}",
+      "}"
+    ]
+  },
+
+  "go-dto": {
+    "prefix": "go-dto",
+    "body": [
+      "// Get dto",
+      "var dto struct {",
+      "\t${1}",
+      "}",
+      "if ex := c.ShouldBindJSON(&dto); ex != nil {",
+      "\treturn nil, ex",
+      "}"
+    ]
+  },
+}

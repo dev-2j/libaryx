@@ -1,0 +1,13 @@
+{
+  "go-ex-route": {
+    "prefix": "go-ex-route",
+    "body": [
+      "routex.GET(rAuthen, `${1:[platforms]}/ex-read`, ${1:[platforms]}.ExRead)",
+      "routex.POST(rAuthen, `${1:[platforms]}/ex-create`, ${1:[platforms]}.ExCreate)",
+      "routex.PUT(rAuthen, `${1:[platforms]}/ex-update`, ${1:[platforms]}.ExUpdate)",
+      "routex.DELETE(rAuthen, `${1:[platforms]}/ex-delete`, ${1:[platforms]}.ExDelete)",
+      "// routex.GET(rAuthen, `${1:[platforms]}/ex-dropdown`, ${1:[platforms]}.ExDropdown)",
+      "// routex.POST(rAuthen, `${1:[platforms]}/ex-bulk`, ${1:[platforms]}.ExBulk)"
+    ]
+  }
+}

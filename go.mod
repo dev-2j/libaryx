@@ -2,7 +2,13 @@ module example.com/m
 
 go 1.20
 
-require github.com/gin-gonic/gin v1.10.0
+require (
+	github.com/gin-gonic/gin v1.10.0
+	github.com/google/uuid v1.6.0
+	github.com/sirupsen/logrus v1.9.3
+	go.mongodb.org/mongo-driver v1.16.1
+	golang.org/x/text v0.17.0
+)
 
 require (
 	github.com/bytedance/sonic v1.12.1 // indirect
@@ -28,7 +34,6 @@ require (
 	golang.org/x/crypto v0.26.0 // indirect
 	golang.org/x/net v0.28.0 // indirect
 	golang.org/x/sys v0.24.0 // indirect
-	golang.org/x/text v0.17.0 // indirect
 	google.golang.org/protobuf v1.34.2 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

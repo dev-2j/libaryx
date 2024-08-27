@@ -1,0 +1,7 @@
+{
+  "go.testEnvFile": "${workspaceFolder}/.env.test",
+  "go.testFlags": ["-count=1"],
+  "files.associations": {
+    "*.env*": "env"
+  }
+}
